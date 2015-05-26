@@ -2,16 +2,17 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-<h1 style="margin-left:45%; margin-top:5%">Fartrr</h1>
-
+<body style="background-color:#18B6DB">
+<div class="container-fluid" style="background-color:#9EF815; width:100%; height:300px">
+<h1 style="margin-left:45%; margin-top:8%; font:">Fartrr</h1>
+</div>
 <table>
   <thead>
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Profile Picture</th>
-      <img src="http://arhiva.glas-javnosti.rs/arhiva/1999/03/29/images/paja.jpg" class="img-circle" style="margin-left:20%; margin-top:5%">
+      <img src="http://arhiva.glas-javnosti.rs/arhiva/1999/03/29/images/paja.jpg" class="img-circle" style="margin-left:43s%; margin-top:5%">
       <th>About Me</th>
       <th colspan="3"></th>
     </tr>
@@ -19,15 +20,15 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.firstname %></td>
-        <td><%= user.lastname %></td>
-        <td><%= user.image %></td>
-        <td><%= user.about %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div>
+        <div><%= user.firstname %></div>
+        <div><%= user.lastname %></div>
+        <div><%= user.image %></div>
+        <div><%= user.about %></div>
+        <div><%= link_to 'Show', user %></div>
+        <div><%= link_to 'Edit', edit_user_path(user) %></div>
+        <div><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
     <% end %>
   </tbody>
 </table>
@@ -35,3 +36,4 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+</body>
