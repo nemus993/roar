@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   root 'welcome#login'
 
   get 'users/new' => 'users#new'
-  post 'users/index' => 'users#create'
-  post 'welcome/login' => 'users#show'
-    # Example of regular route:
+  post 'users/index' =>'users#create'
+
+  # Example of regular route:
   #   get 'users/:users' => 'welcome#profile'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

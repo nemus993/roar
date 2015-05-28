@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150525222904) do
     t.string   "lastname",   limit: 255
     t.string   "image",      limit: 255
     t.text     "about",      limit: 65535
+    t.string   "password"	 limit:30
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
