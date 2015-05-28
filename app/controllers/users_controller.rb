@@ -9,8 +9,19 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+  
+  #----------------------------------
+  #mozda radi by fanna
   def show
+    user = User.find_by(firstname: params[:session][:firstname].downcase)
+    if user && user.authenticate(params[:session][:password])
+      # Log the user in and redirect to the user's show page.
+    else
+      flash[:danger] = 'Invalid firstname/password combination' # Not quite right!
+      render 'new'
+    end
   end
+  #----------------------------------
 
   # GET /users/new
   def new
