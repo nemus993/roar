@@ -3,8 +3,9 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :firstname
       t.string :lastname
-      t.string :image
+      t.file :image
       t.text :about
+      t.string :password
 
       t.timestamps null: false
     end
