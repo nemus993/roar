@@ -91,15 +91,17 @@
               <div class="form-login">
               <% provide(:title, "Log in") %>
                 <h2>Login</h2>
-             
-                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" /> 
-              </br>
-              <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-            </br>
-            <div class="wrapper">
-              <span class="group-btn">     
-                <a href="/users" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-        
+                <%= form_for(:session, url: login_path) do |f| %>
+
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
+
+                <%= f.submit "Login", class: "btn btn-primary" %>
+                <% end %>
+                
             </div>
           </div>
         </div>
