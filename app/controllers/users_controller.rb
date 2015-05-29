@@ -4,9 +4,8 @@ class UsersController < ApplicationController
 
 
     def require_login
-     if session[:current_user_id] != params[:id]
+     if session[:current_user_id].to_s != params[:id]
          redirect_to users_url+"/new"
-
       end
     end
   # GET /users
@@ -21,13 +20,7 @@ class UsersController < ApplicationController
   #----------------------------------
   #mozda radi by fanna
   def show
-    user = User.find_by(firstname: params[:session][:firstname].downcase)
-    if user && user.authenticate(params[:session][:password])
-      # Log the user in and redirect to the user's show page.
-    else
-      flash[:danger] = 'Invalid firstname/password combination' # Not quite right!
-      render 'new'
-    end
+   
   end
   #----------------------------------
 
@@ -44,10 +37,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    session[:current_user_id] = @user.id
+
 
     respond_to do |format|
       if @user.save
+        session[:current_user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
