@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new'
   post 'users/index' =>'users#create'
 
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
   # Example of regular route:
   #   get 'users/:users' => 'welcome#profile'
 
