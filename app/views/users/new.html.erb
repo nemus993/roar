@@ -33,6 +33,9 @@
 			    			</div>
 
 			    			<div class="form-group">
+			    			<%= f.text_field :email, class: 'form-control input-sm' ,:placeholder => "Your Email" %>
+			    			</div>
+			    			<div class="form-group">
 			    			<%= f.text_field :about, class: 'form-control textarea' ,:placeholder => "About", :rows =>"3" %>
 			    			</div>
 
@@ -44,7 +47,7 @@
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+			    						<%= f.password_field :password_confirmation, class: 'form-control input-sm', :placeholder => "Confirm Password" %>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">

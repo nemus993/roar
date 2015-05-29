@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   #----------------------------------
   #mozda radi by fanna
   def show
-   
   end
   #----------------------------------
 
